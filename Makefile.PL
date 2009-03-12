@@ -1,0 +1,11 @@
+use strict;
+use inc::Module::Install;
+name 'String-Perl-Warnings';
+author 'Chris Williams <chris@bingosnet.co.uk>';
+version_from 'lib/String/Perl/Warnings.pm';
+abstract_from 'lib/String/Perl/Warnings.pm';
+license 'perl';
+perl_version '5.006';
+build_requires 'Test::More' => 0.47;
+requires 'Regexp::Assemble' => 0.34;
+WriteAll();

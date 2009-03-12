@@ -1,0 +1,8 @@
+Change log for String::Perl::Warnings
+=====================================
+
+0.04	Fri Feb 20 12:47:46 GMT 2009
+	- Added 'not_warning' function.
+
+0.02	Tue Feb 17 23:36:38 GMT 2009
+	- Initial CPAN Release
