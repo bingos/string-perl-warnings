@@ -5,7 +5,7 @@ use warnings; # Duh >:)
 use Regexp::Assemble;
 use vars qw($VERSION);
 
-$VERSION = '0.04';
+$VERSION = '1.00';
 
 require Exporter;
 our @ISA = qw( Exporter );

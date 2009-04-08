@@ -8,4 +8,5 @@ license 'perl';
 perl_version '5.006';
 build_requires 'Test::More' => 0.47;
 requires 'Regexp::Assemble' => 0.34;
+eval "auto_set_repository";
 WriteAll();

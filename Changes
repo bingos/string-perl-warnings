@@ -1,6 +1,10 @@
 Change log for String::Perl::Warnings
 =====================================
 
+1.00	Wed Apr  8 20:56:12 BST 2009
+	- Auto set repository in META.yml
+	- Bump to a 'stable' release version
+
 0.04	Fri Feb 20 12:47:46 GMT 2009
 	- Added 'not_warning' function.
 
