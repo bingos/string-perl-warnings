@@ -1,6 +1,10 @@
 Change log for String::Perl::Warnings
 =====================================
 
+1.02	Mon May 18 10:06:58 BST 2009
+	- Update Makefile.PL to use auto_license
+	  and githubmeta extensions.
+
 1.00	Wed Apr  8 20:56:12 BST 2009
 	- Auto set repository in META.yml
 	- Bump to a 'stable' release version
