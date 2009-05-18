@@ -9,5 +9,6 @@ auto_license holder => 'Chris Williams';
 perl_version '5.006';
 build_requires 'Test::More' => 0.47;
 requires 'Regexp::Assemble' => 0.34;
+auto_provides;
 githubmeta;
 WriteAll();
