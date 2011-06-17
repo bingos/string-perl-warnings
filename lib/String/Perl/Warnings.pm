@@ -5,11 +5,15 @@ use warnings; # Duh >:)
 use Regexp::Assemble;
 use vars qw($VERSION);
 
-$VERSION = '1.04';
+$VERSION = '1.06';
 
 require Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT_OK = qw(is_warning not_warning);
+
+our $re;
+
+{
 
 my $lines = [
 q{.+?\ \"\\x.+?\"\ does\ not\ map\ to\ Unicode},
@@ -982,17 +986,22 @@ q{x\ outside\ of\ string},
 my $ra = Regexp::Assemble->new;
 $ra->add($_) for @$lines;
 
+$re = $ra->re;
+
+}
+
 sub is_warning {
   my $string = shift || return;
-  return $string =~ $ra->re;
+  return $string =~ $re;
 }
 
 sub not_warning {
   my $string = shift || return 1;
-  return $string !~ $ra->re;
+  return $string !~ $re;
 }
 
 'Danger! Danger! High Voltage!';
+
 __END__
 
 =head1 NAME

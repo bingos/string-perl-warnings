@@ -21,3 +21,4 @@ t/01_warnings.t
 t/02_nowarnings.t
 t/99_pod.t
 t/99_pod_coverage.t
+tools/buildlist.pl
