@@ -1,11 +1,10 @@
 package String::Perl::Warnings;
 
+#ABSTRACT: Determine if a string looks like a perl warning
+
 use strict;
 use warnings; # Duh >:)
 use Regexp::Assemble;
-use vars qw($VERSION);
-
-$VERSION = '1.06';
 
 require Exporter;
 our @ISA = qw( Exporter );
@@ -1254,11 +1253,7 @@ sub not_warning {
 
 'Danger! Danger! High Voltage!';
 
-__END__
-
-=head1 NAME
-
-String::Perl::Warnings - Determine if a string looks like a perl warning
+=pod
 
 =head1 SYNOPSIS
 
@@ -1298,16 +1293,6 @@ Takes an arbitary string of text and returns a true value if the string does not
 warning and a false value otherwise.
 
 =back
-
-=head1 AUTHOR
-
-Chris C<BinGOs> Williams
-
-=head1 LICENSE
-
-Copyright E<copy> Chris Williams
-
-This module may be used, modified, and distributed under the same terms as Perl itself. Please see the license that came with your Perl distribution for details.
 
 =head1 SEE ALSO
 
