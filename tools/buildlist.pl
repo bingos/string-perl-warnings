@@ -9,7 +9,7 @@ use File::Path qw[rmtree];
 
 $|=1;
 
-my $mirror;
+my $mirror = 'http://cpan.mirror.local/CPAN/';
 my $prefix = '/home/ftp/CPAN/';
 
 my %lines;
@@ -17,8 +17,8 @@ my @perls =
   map { s/^v//; "perl-$_" }
   map { $_->normal }
   grep { ( $_->version % 2 ) == 0 }
-  map { Perl::Version->new($_) } 
-  grep { $_ >= 5.006 and length($_) > 4 } 
+  map { Perl::Version->new($_) }
+  grep { $_ >= 5.006 and length($_) > 4 }
   sort keys %Module::CoreList::version;
 
 for my $perl ( @perls ) {
@@ -33,8 +33,8 @@ for my $perl ( @perls ) {
     $stat = File::Spec->catfile( $prefix, 'src/5.0', "$perl.tar.gz" );
   }
   if ( $stat ) {
-    my $cmd = [ 'tar', 'zxf', $stat, File::Spec::Unix->catfile( $perl, 'pod', 'perldiag.pod' ) ];
-    if ( run( command => $cmd ) ) {
+    my $cmd = [ 'gtar', 'zxf', $stat, File::Spec::Unix->catfile( $perl, 'pod', 'perldiag.pod' ) ];
+    if ( run( command => $cmd, verbose => 0 ) ) {
       warn "Extracted '$stat'\n";
       unlink $stat;
       open my $pod, '<', File::Spec->catfile( $perl, 'pod', 'perldiag.pod' ) or die "$!\n";
@@ -43,11 +43,11 @@ for my $perl ( @perls ) {
         next unless /^\=item/i;
         s/^\=item\s+//g;
         $_ = quotemeta($_);
-        s/(\\\%(?:lx|s|c|d))/.+?/g;
+        s/(\\\%(?:lx|s|c|d|u|x|X))/.+?/g;
         $lines{$_}++;
       }
       close $pod;
-      rmtree $perl;
+      #rmtree $perl;
     }
   }
 }
