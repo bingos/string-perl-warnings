@@ -948,7 +948,7 @@ q{\"\\B\{\"\ is\ deprecated\;\ use\ \"\\B\\\{\"\ or\ \"\\B\[\{\]\"\ instead\ in\
 q{\"\\b\{\"\ is\ deprecated\;\ use\ \"\\b\\\{\"\ instead},
 q{\"\\b\{\"\ is\ deprecated\;\ use\ \"\\b\\\{\"\ or\ \"\\b\[\{\]\"\ instead\ in\ regex\;\ marked\ by\ \<\-\-\ HERE\ in\ m\/.+?\/},
 q{\"\\c.+?\"\ is\ more\ clearly\ written\ simply\ as\ \".+?\"},
-q{\"\\c\{\"\ is\ deprecated\ and\ is\ more\ clearly\ written\ as\ \"\;\"},
+#q{\"\\c\{\"\ is\ deprecated\ and\ is\ more\ clearly\ written\ as\ \"\;\"}, # seriously this is nonsense
 q{\"my\ .+?\"\ used\ in\ sort\ comparison},
 q{\"my\ sub\"\ not\ yet\ implemented},
 q{\"my\"\ variable\ .+?\ can\'t\ be\ in\ a\ package},
